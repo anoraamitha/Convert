@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+        char Name[10][40],phoneNumber[10][13],Address[10][100]; // creating requried variables
+
+        //Creating the data/
+        strncpy(Name[0], "Dini Noviani", sizeof(Name[0]));
+        strncpy(phoneNumber[0], "081225224336", sizeof(phoneNumber[0]));
+        strncpy(Address[0], "Peklongan, Jawa Tenhag", sizeof(Address[0]));
+
+        strncpy(Name[1], "Dini Maryati", sizeof(Name[1]));
+        strncpy(phoneNumber[1], "081225224337", sizeof(phoneNumber[1]));
+        strncpy(Address[1], "Semarang, Jawa Tenhag", sizeof(Address[1]));
+
+        strncpy(Name[2], "Fahri", sizeof(Name[2]));
+        strncpy(phoneNumber[2], "081225224338", sizeof(phoneNumber[2]));
+        strncpy(Address[2], "Jayapura, Papua", sizeof(Address[2]));
+
+        strncpy(Name[3], "Fahrur", sizeof(Name[3]));
+        strncpy(phoneNumber[3], "081227224336", sizeof(phoneNumber[3]));
+        strncpy(Address[3], "Sintang, Kalimantan Barat", sizeof(Address[3]));
+
+        strncpy(Name[4], "Zafir", sizeof(Name[4]));
+        strncpy(phoneNumber[4], "081235294339", sizeof(phoneNumber[4]));
+        strncpy(Address[4], "Samarinda, Kalimantan Timur", sizeof(Address[4]));
+
+        strncpy(Name[5], "Ruben", sizeof(Name[5]));
+        strncpy(phoneNumber[5], "081205220336", sizeof(phoneNumber[5]));
+        strncpy(Address[5], "Malang, Jawa Timur", sizeof(Address[5]));
+
+        strncpy(Name[6], "Tria", sizeof(Name[6]));
+        strncpy(phoneNumber[0], "081225224336", sizeof(phoneNumber[6]));
+        strncpy(Address[6], "Bandung, Jawa Barat", sizeof(Address[6]));
+
+
+        while(1){
+        char nam[40]; // this variable is created for searching a name
+        printf("Enter Name:");
+        scanf("%s",&nam);
+        int d = 0;
+        for(int i=0;i<7;i++){
+                /* this condition check wheather a sub string is there or not if present then some address genarated or else NULL*/
+                if (strstr(Name[i], nam) != NULL)
+                { //Here data will display/
+                        printf("Name: %s\n",Name[i]);
+                        printf("Phone Number: %s\n",phoneNumber[i]);
+                        printf("Address: %s\n",Address[i]);
+                        printf("\n");
+                        d=1;
+                }
+
+        }
+        if(d==0){
+                printf("Data Not Exist\n\n");
+        }
+/* Its purpose is to clear (or flush) the output buffer and move the buffered data to console*/
+        fflush(stdin);
+        int choice;
+        printf("1->To search Again:\n");
+        printf("Or Enter 1 to Exit from the program:");
+
+        scanf("%d",&choice);
+//if choice is one then it will start again from while loop or else it will stop/
+        if(choice==1){
+                continue;
+        }
+        else{
+                break;
+        }
+        }
+          return 0;
+
+        }
